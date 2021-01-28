@@ -1,0 +1,30 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeE1ERXlPREUxTVRBMU5Wb1hEVE14TURFeU5qRTFNVEExTlZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTFlDCkxhditoRXh0bjJLSFByL0tUOVhTdyt1cWlUT2gxMHRXdHB2eUNGd3hrV3BxbTIzdWVhWFNMT25kR1ZtMFpQcGcKai8zZVNwUStkV2lnYjNuOHBON2dxZmk2eEVJWEpZVUxnVXNVMmdwYm42b05Na2RFQWhUM1BWazhDdjl2TElQcwpYN1hUY3VZUFJjU1daZDB6dTZDYmVPSlVjZFVGU0pUMHRTWXpzNDBBUzlDN0NDR3hyL0l1QWpSMWtKd2h4UXVsCkdyRHRmeEgzZXd4RDRqSlF3R1RMSm5xTzFQZ0hpaEFPY2ZubnYxSWVJQzhGSFZYUkwzMzhqY01yYVJnMmJneUUKRTR6a1BVQXJVczFPeWRRSk1sazYwMHhTNUlrYUMyWTJSdTh3TzYwL0J6R2c2VWVnUmhrZWxESzB6dktiVm9hTApNajFXenArNll6SXVVdzNHRjE4Q0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFFZXhRaE02MTBnRG8wdEtmNTErV0JPMXplQWcKMUpWbUU2T3o5R05vNjBxRTE1d01NK2xLRy9hbzBNUmh6eXM1SmNkUU1tdGQramlWcnRmaDFUaENJMDMveHFrUQp3TFlUY2s1VE0vaHZjd2QrVkxMdkN5WU1WWkRlRHF4ejVkYm85eU1DQVkxU2FJT2hJVHZWajR5VmdWV2I3TEpoCkdXbUsvU3hqTEtzcWZzMTNxQUtzbDhNU1k4NGVGeDNVSjNubTlWeXEvb2xvSnN1bS9ndzZiekJlSHd6ZllDK2sKWEx6Z09LWlcrMG1tR1hzUktFK0ZVUEluSitaSnJIVUxwK1dhSTJxbCthckZReSt5Q1dKR09GR2N1cWhBbno0RQpvYXlCVjVHSVdSaWtPS1oyTFNRZElXK1RpSldoaDd6ZzB0ZVdXNVprVm5IaVBKenp4QVBYSHJkTENnVT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://81BFB83E02BD85EB73569F431ACF5FA1.gr7.us-west-2.eks.amazonaws.com
+  name: constellation-two.us-west-2.eksctl.io
+contexts:
+- context:
+    cluster: constellation-two.us-west-2.eksctl.io
+    user: iam-root-account@constellation-two.us-west-2.eksctl.io
+  name: iam-root-account@constellation-two.us-west-2.eksctl.io
+current-context: iam-root-account@constellation-two.us-west-2.eksctl.io
+kind: Config
+preferences: {}
+users:
+- name: iam-root-account@constellation-two.us-west-2.eksctl.io
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - eks
+      - get-token
+      - --cluster-name
+      - constellation-two
+      - --region
+      - us-west-2
+      command: aws
+      env:
+      - name: AWS_STS_REGIONAL_ENDPOINTS
+        value: regional
